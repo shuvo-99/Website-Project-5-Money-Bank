@@ -1,9 +1,9 @@
-function getInputValue(){
-    const foodInput = document.getElementById('foodCost');
-    const foodAmountText = foodInput.value;
-    const foodAmount = parseFloat(foodAmountText)
-    foodInput.value = '';
-    return foodAmount;
+function getInputValue(inputCost){
+    const input = document.getElementById(inputCost);
+    const inputAmountText = input.value;
+    const inputAmount = parseFloat(inputAmountText)
+    input.value = '';
+    return inputAmount;
 
 }
 
@@ -13,17 +13,20 @@ document.getElementById('calc-button').addEventListener('click',function(){
     // const foodAmountText = foodInput.value;
     // const foodAmount = parseFloat(foodAmountText)
     // console.log(foodAmount);
-    const foodAmount = getInputValue();
+    const foodAmount = getInputValue('foodCost');
 
-    const rentInput = document.getElementById('rentCost');
-    const rentAmountText = rentInput.value;
-    const rentAmount = parseFloat(rentAmountText)
-    console.log(rentAmount);
+    // const rentInput = document.getElementById('rentCost');
+    // const rentAmountText = rentInput.value;
+    // const rentAmount = parseFloat(rentAmountText)
+    // console.log(rentAmount);
+    const rentAmount = getInputValue('rentCost');
     
-    const clothesInput = document.getElementById('clothesCost');
-    const clothesAmountText = clothesInput.value;
-    const clothesAmount = parseFloat(clothesAmountText)
-    console.log(clothesAmount);
+    // const clothesInput = document.getElementById('clothesCost');
+    // const clothesAmountText = clothesInput.value;
+    // const clothesAmount = parseFloat(clothesAmountText)
+    // console.log(clothesAmount);
+
+    const clothesAmount = getInputValue('clothesCost');
 
     // get current total
     const totalCost = document.getElementById('totalCost');
@@ -63,8 +66,8 @@ document.getElementById('calc-button').addEventListener('click',function(){
 
     // clear input field
     
-    rentInput.value = '';
-    clothesInput.value = '';
+    // rentInput.value = '';
+    // clothesInput.value = '';
 
 
 })
