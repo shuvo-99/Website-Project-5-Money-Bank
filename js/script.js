@@ -1,8 +1,19 @@
-document.getElementById('calc-button').addEventListener('click',function(){
+function getInputValue(){
     const foodInput = document.getElementById('foodCost');
     const foodAmountText = foodInput.value;
     const foodAmount = parseFloat(foodAmountText)
-    console.log(foodAmount);
+    foodInput.value = '';
+    return foodAmount;
+
+}
+
+
+document.getElementById('calc-button').addEventListener('click',function(){
+    // const foodInput = document.getElementById('foodCost');
+    // const foodAmountText = foodInput.value;
+    // const foodAmount = parseFloat(foodAmountText)
+    // console.log(foodAmount);
+    const foodAmount = getInputValue();
 
     const rentInput = document.getElementById('rentCost');
     const rentAmountText = rentInput.value;
@@ -51,7 +62,7 @@ document.getElementById('calc-button').addEventListener('click',function(){
     // console.log(totalCostText);
 
     // clear input field
-    foodInput.value = '';
+    
     rentInput.value = '';
     clothesInput.value = '';
 
