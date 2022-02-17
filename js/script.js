@@ -8,4 +8,9 @@ document.getElementById("calc-button").addEventListener("click", function () {
   const rentAmountText = rentInput.value;
   const rentAmount = parseFloat(rentAmountText);
   console.log(rentAmount);
+
+  const clothesInput = document.getElementById("clothesCost");
+  const clothesAmountText = clothesInput.value;
+  const clothesAmount = parseFloat(clothesAmountText);
+  console.log(clothesAmount);
 });
