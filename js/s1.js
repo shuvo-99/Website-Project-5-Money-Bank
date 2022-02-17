@@ -5,13 +5,13 @@ function getInputValue(inputParameter) {
     const inputAmount = parseFloat(inputAmountText);
     console.log(inputAmount)
     
-    input.value = "";
+    // input.value = "";
     
     return inputAmount;
   }
 
   
-  document.getElementById("calc-button").addEventListener("click", function () {
+document.getElementById("calc-button").addEventListener("click", function () {
     
     const incomeAmount = getInputValue("income");
     
@@ -31,30 +31,6 @@ function getInputValue(inputParameter) {
       totalCost.innerText = previousTotalCost + 0 + 0 + 0;
     } 
     else if (isNaN(foodAmount) && isNaN(rentAmount)) {
-
-    //   if(isNaN(clothesAmount)){
-
-    //     console.log('no')
-    //     const Integer = document.getElementById("notify-int");
-    //     Integer.style.display = "block";
-    
-    //   }
-    //   else {
-    //       console.log('yes')
-          // if value is positive
-        // if (clothesAmount >= 0) {
-        //     totalCost.innerText = previousTotalCost + 0 + 0 + clothesAmount;
-        //     const positiveInt = document.getElementById("notify-positve-int");
-        //     positiveInt.style.display = "none";
-        // }
-    
-        // // show error
-        // else {
-        //     const positiveInt = document.getElementById("notify-positve-int");
-        //     positiveInt.style.display = "block";
-        // }
-
-    //   }
     //    if value is positive
         if (clothesAmount >= 0 && incomeAmount>=0) {
           totalCost.innerText = (previousTotalCost + 0 + 0 + clothesAmount).toFixed(2);
@@ -201,4 +177,51 @@ function getInputValue(inputParameter) {
         const positiveInt = document.getElementById("notify-positve-int");
         positiveInt.style.display = "block";
     }
+
+});
+
+document.getElementById("save").addEventListener("click", function () {
+
+    const saveAmount = getInputValue("saveInput");
+
+    const incomeAmount = getInputValue("income");
+
+    // get current savings
+  
+    const savingAmount = document.getElementById("saving");
+    const savingAmountText = savingAmount.innerText;
+    const previousSavingAmount = parseFloat(savingAmountText);
+
+    if (saveAmount>=0 && typeof(saveAmount)=='number'){
+        const totalSavingAmount = (saveAmount * incomeAmount)/100;
+        console.log(totalSavingAmount);
+        savingAmount.innerText = totalSavingAmount;
+
+        // calc remaining balance
+        const remainAmount = document.getElementById("remainBalance");
+        const remainAmountText = remainAmount.innerText;
+        const previousRemainAmount = parseFloat(remainAmountText);
+        
+        if(totalSavingAmount>balance.innerText){
+            savingAmount.innerText=0
+            const savingBig = document.getElementById("notify-savingcan't-big");
+            savingBig.style.display = "block";
+             
+        }
+        else{
+            const totalRemainBalance = balance.innerText - totalSavingAmount;
+            console.log(totalRemainBalance);
+            remainAmount.innerText = totalRemainBalance;
+            const positiveInt = document.getElementById("notify-positve-int");
+            positiveInt.style.display = "none";
+            const savingBig = document.getElementById("notify-savingcan't-big");
+            savingBig.style.display = "none";
+        }
+    }
+    // show error
+    else {
+        const positiveInt = document.getElementById("notify-positve-int");
+        positiveInt.style.display = "block";
+    }    
+
 });

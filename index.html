@@ -140,6 +140,9 @@
                 >
                   Calculate
                 </button>
+
+                <!-- Reset -->
+
                 <a href="" class="btn btn-warning">Reset</a>
               </div>
               <!-- total expense -->
@@ -150,6 +153,34 @@
               <div>
                 <p>Balance: <span id="balance">00</span></p>
               </div>
+
+               <!--Save  -->
+
+              <div
+                class="row g-3 mb-3 align-items-center justify-content-center"
+              >
+                <div class="col-auto">
+                  <label for="save" class="col-form-label">Save:</label>
+                </div>
+                <div class="col-3">
+                  <input type="text" class="form-control" id="saveInput" />
+                </div>
+                %
+                <button type="button" class="btn btn-width btn-info mx-2" id="save">Save</button>
+                 
+              </div>
+
+              <!-- Saving Amount -->
+              <div>
+                <p>Saving Amount: <span id="saving">00</span></p>
+              </div>
+              <!-- remaining balance -->
+              <div>
+                <p>Remaining Balance: <span id="remainBalance">00</span></p>
+              </div>
+
+
+
               <!-- eorror -->
               <div class="notify-section">
                 <p id="notify-int" class="notify">
@@ -160,6 +191,9 @@
                 </p>
                 <p id="notify-costcan't-big" class="notify">
                   ❌ Expense cannot be greater than income
+                </p>
+                <p id="notify-savingcan't-big" class="notify">
+                  ❌ Saving cannot be greater than balance
                 </p>
                 <!-- <p class="notify">
                   ✅ Pin Matched... Secret door is opening for you
