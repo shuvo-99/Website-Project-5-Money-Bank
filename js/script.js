@@ -1,9 +1,37 @@
 function getInputValue(inputCost) {
     const input = document.getElementById(inputCost);
+
     const inputAmountText = input.value;
     const inputAmount = parseFloat(inputAmountText);
-    input.value = "";
-    return inputAmount;
+    console.log(inputAmount)
+    // if (isNaN(inputAmount)){
+    // if (typeof(inputAmount)!='number'){
+        
+        
+    //     console.log('no')
+    //     const Integer = document.getElementById("notify-int");
+    //     Integer.style.display = "block";
+
+    // }
+    // else if(typeof(inputAmount)=='number'){
+        
+    //     input.value = "";
+    
+    //     return inputAmount;
+    // }
+    if(inputAmount >= 0){
+        input.value = "";
+    
+        return inputAmount;
+    }
+    else{
+        console.log('no')
+        const positiveInt = document.getElementById("notify-positve-int");
+        positiveInt.style.display = "block";
+    }
+    // input.value = "";
+    
+    // return inputAmount;
   }
   
   // function currentTotal() {
@@ -40,19 +68,48 @@ function getInputValue(inputCost) {
   
     if (isNaN(foodAmount) && isNaN(rentAmount) && isNaN(clothesAmount)) {
       totalCost.innerText = previousTotalCost + 0 + 0 + 0;
-    } else if (isNaN(foodAmount) && isNaN(rentAmount)) {
-      // if value is positive
-      if (clothesAmount >= 0) {
+    } 
+    else if (isNaN(foodAmount) && isNaN(rentAmount)) {
+
+    //   if(isNaN(clothesAmount)){
+
+    //     console.log('no')
+    //     const Integer = document.getElementById("notify-int");
+    //     Integer.style.display = "block";
+    
+    //   }
+    //   else {
+    //       console.log('yes')
+          // if value is positive
+        // if (clothesAmount >= 0) {
+        //     totalCost.innerText = previousTotalCost + 0 + 0 + clothesAmount;
+        //     const positiveInt = document.getElementById("notify-positve-int");
+        //     positiveInt.style.display = "none";
+        // }
+    
+        // // show error
+        // else {
+        //     const positiveInt = document.getElementById("notify-positve-int");
+        //     positiveInt.style.display = "block";
+        // }
+
+    //   }
+       // if value is positive
+        // if (clothesAmount >= 0) {
+        //   totalCost.innerText = previousTotalCost + 0 + 0 + clothesAmount;
+        //   const positiveInt = document.getElementById("notify-positve-int");
+        //   positiveInt.style.display = "none";
+        // }
         totalCost.innerText = previousTotalCost + 0 + 0 + clothesAmount;
         const positiveInt = document.getElementById("notify-positve-int");
         positiveInt.style.display = "none";
-      }
-  
-      // show error
-      else {
-        const positiveInt = document.getElementById("notify-positve-int");
-        positiveInt.style.display = "block";
-      }
+
+    // show error
+        // else {
+        //   const positiveInt = document.getElementById("notify-positve-int");
+        //   positiveInt.style.display = "block";
+        // }
+    
       // totalCost.innerText = previousTotalCost + 0 + 0 + clothesAmount;
     } else if (isNaN(foodAmount) && isNaN(clothesAmount)) {
       // if value is positive
@@ -129,7 +186,7 @@ function getInputValue(inputCost) {
       }
       // totalCost.innerText = previousTotalCost + foodAmount + rentAmount + 0;
     } else {
-        
+
       // if value is positive  
       if (foodAmount >= 0 && rentAmount >= 0 && clothesAmount >= 0) {
         totalCost.innerText =
