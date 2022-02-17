@@ -57,7 +57,7 @@ function getInputValue(inputParameter) {
     //   }
     //    if value is positive
         if (clothesAmount >= 0 && incomeAmount>=0) {
-          totalCost.innerText = previousTotalCost + 0 + 0 + clothesAmount;
+          totalCost.innerText = (previousTotalCost + 0 + 0 + clothesAmount).toFixed(2);
           const positiveInt = document.getElementById("notify-positve-int");
           positiveInt.style.display = "none";
         }
@@ -71,7 +71,7 @@ function getInputValue(inputParameter) {
     } else if (isNaN(foodAmount) && isNaN(clothesAmount)) {
         //    if value is positive
         if (rentAmount >= 0 && incomeAmount>=0) {
-            totalCost.innerText = previousTotalCost + 0 + rentAmount + 0;
+            totalCost.innerText = (previousTotalCost + 0 + rentAmount + 0).toFixed(2);
             const positiveInt = document.getElementById("notify-positve-int");
             positiveInt.style.display = "none";
         }
@@ -85,7 +85,7 @@ function getInputValue(inputParameter) {
     } else if (isNaN(rentAmount) && isNaN(clothesAmount)) {
         //    if value is positive
         if (foodAmount >= 0 && incomeAmount>=0) {
-            totalCost.innerText = previousTotalCost + foodAmount + 0 + 0;
+            totalCost.innerText = (previousTotalCost + foodAmount + 0 + 0).toFixed(2);
             const positiveInt = document.getElementById("notify-positve-int");
             positiveInt.style.display = "none";
         }
@@ -99,7 +99,7 @@ function getInputValue(inputParameter) {
         //    if value is positive
 
         if (rentAmount >= 0 && clothesAmount >= 0 && incomeAmount>=0) {
-            totalCost.innerText = previousTotalCost + 0 + rentAmount + clothesAmount;
+            totalCost.innerText = (previousTotalCost + 0 + rentAmount + clothesAmount).toFixed(2);
             const positiveInt = document.getElementById("notify-positve-int");
             positiveInt.style.display = "none";
         }
@@ -113,7 +113,7 @@ function getInputValue(inputParameter) {
 
         //    if value is positive
         if (foodAmount >= 0 && clothesAmount >= 0 && incomeAmount>=0) {
-            totalCost.innerText = previousTotalCost + foodAmount + 0 + clothesAmount;
+            totalCost.innerText = (previousTotalCost + foodAmount + 0 + clothesAmount).toFixed(2);
             const positiveInt = document.getElementById("notify-positve-int");
             positiveInt.style.display = "none";
         }
@@ -129,7 +129,7 @@ function getInputValue(inputParameter) {
       
         // if value is positive 
         if (foodAmount >= 0 && rentAmount >= 0 && incomeAmount>=0) {
-            totalCost.innerText = previousTotalCost + foodAmount + rentAmount + 0;
+            totalCost.innerText = (previousTotalCost + foodAmount + rentAmount + 0).toFixed(2);
             const positiveInt = document.getElementById("notify-positve-int");
             positiveInt.style.display = "none";
         }
@@ -145,7 +145,7 @@ function getInputValue(inputParameter) {
         //    if value is positive
         if (foodAmount >= 0 && rentAmount >= 0 && clothesAmount >= 0 && incomeAmount>=0) {
             totalCost.innerText =
-              previousTotalCost + foodAmount + rentAmount + clothesAmount;
+              (previousTotalCost + foodAmount + rentAmount + clothesAmount).toFixed(2);
             // console.log(totalCost.innerText);
             const positiveInt = document.getElementById("notify-positve-int");
             positiveInt.style.display = "none";
@@ -185,7 +185,8 @@ function getInputValue(inputParameter) {
                 positiveInt.style.display = "block";
             }
             else{
-                balance.innerText = incomeAmount - parseFloat(totalCost.innerText);
+                const Balance = incomeAmount - parseFloat(totalCost.innerText);
+                balance.innerText = Balance.toFixed(2);
                 console.log(balance.innerText);
                 const positiveInt = document.getElementById("notify-positve-int");
                 positiveInt.style.display = "none";
