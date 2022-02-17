@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Save & Expense</title>
+    <title>Document</title>
 
     <!-- bootstrap -->
     <link
@@ -34,89 +34,144 @@
           </div>
           <div class="col-md-6">
             <div class="text-center">
+              <!-- Income -->
               <div>
                 <p>Income</p>
               </div>
-              <div>
-                <p>
-                  Income: <span><input type="text " /></span>
-                </p>
+              <!-- Income box -->
+              <div
+                class="row g-3 mb-3 align-items-center justify-content-center"
+              >
+                <div class="col-auto">
+                  <label for="income" class="col-form-label">Income:</label>
+                </div>
+                <div class="col-auto">
+                  <input
+                    type="text"
+                    id="income"
+                    class="form-control"
+                    placeholder="*Required"
+                  />
+                </div>
               </div>
+              <!-- Expense -->
               <div>
                 <p>Expense</p>
               </div>
-              <div>
-                <p>
-                  Food: <span><input type="text " /></span>
-                </p>
+              <!-- food -->
+              <div
+                class="row g-3 mb-3 align-items-center justify-content-center"
+              >
+                <div class="col-auto">
+                  <label for="foodCost" class="col-form-label">Food:</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" class="form-control" id="foodCost" />
+                </div>
               </div>
-              <div>
-                <p>
-                  Rent: <span><input type="text " /></span>
-                </p>
+              <!-- rent -->
+              <div
+                class="row g-3 mb-3 align-items-center justify-content-center"
+              >
+                <div class="col-auto">
+                  <label for="rentCost" class="col-form-label">Rent:</label>
+                </div>
+                <div class="col-auto">
+                  <input type="text" class="form-control" id="rentCost" />
+                </div>
               </div>
-              <div>
-                <p>
-                  Clothes: <span><input type="text " /></span>
-                </p>
+              <!-- clothes -->
+              <div
+                class="row g-3 mb-3 align-items-center justify-content-center"
+              >
+                <div class="col-auto">
+                  <label for="clothesCost" class="col-form-label"
+                    >Clothes:</label
+                  >
+                </div>
+                <div class="col-auto">
+                  <input type="text" class="form-control" id="clothesCost" />
+                </div>
               </div>
+              <!-- calculate -->
               <div>
-                <button type="button" class="btn btn-primary px-5 mb-2">
+                <button
+                  id="calc-button"
+                  type="button"
+                  class="btn btn-primary px-5 my-3"
+                >
                   Calculate
                 </button>
+
+                <!-- Reset -->
+
+                <a href="" class="btn btn-warning">Reset</a>
               </div>
-              <!-- <div class="d-grid col-6 mx-auto">
-                <button class="btn btn-primary" type="button">Button</button>
-              </div> -->
+              <!-- total expense -->
               <div>
-                <p>Total Expense: 5500</p>
+                <p>Total Expense: <span id="totalCost">00</span></p>
               </div>
+              <!-- balance -->
               <div>
-                <p>Balance: 4500</p>
+                <p>Balance: <span id="balance">00</span></p>
               </div>
+
+              <!--Save  -->
+
+              <div
+                class="row g-3 mb-3 align-items-center justify-content-center"
+              >
+                <div class="col-auto">
+                  <label for="save" class="col-form-label">Save:</label>
+                </div>
+                <div class="col-3">
+                  <input type="text" class="form-control" id="saveInput" />
+                </div>
+                %
+                <button
+                  type="button"
+                  class="btn btn-width btn-info mx-2"
+                  id="save"
+                >
+                  Save
+                </button>
+              </div>
+
+              <!-- Saving Amount -->
+              <div>
+                <p>Saving Amount: <span id="saving">00</span></p>
+              </div>
+              <!-- remaining balance -->
+              <div>
+                <p>Remaining Balance: <span id="remainBalance">00</span></p>
+              </div>
+
+              <!-- eorror -->
               <div class="notify-section">
-                <p class="notify">❌ Please input a number as input</p>
-                <p class="notify">❌ Please input a positve number as input</p>
+                <p id="notify-int" class="notify">
+                  ❌ Please input a number as input
+                </p>
+                <p id="notify-positve-int" class="notify">
+                  ❌ Please input a positve number as input
+                </p>
+                <p id="notify-costcan't-big" class="notify">
+                  ❌ Expense cannot be greater than income
+                </p>
+                <p id="notify-savingcan't-big" class="notify">
+                  ❌ Saving cannot be greater than balance
+                </p>
                 <!-- <p class="notify">
                   ✅ Pin Matched... Secret door is opening for you
                 </p> -->
               </div>
-              <!-- <div class="row g-3 align-items-center justify-content-center">
-                <div class="col-auto">
-                  <label for="inputPassword6" class="col-form-label"
-                    >Password</label
-                  >
-                </div>
-                <div class="col-auto">
-                  <input
-                    type="password"
-                    id="inputPassword6"
-                    class="form-control"
-                    aria-describedby="passwordHelpInline"
-                  />
-                </div>
-              </div>
-              <div class="row g-3 align-items-center justify-content-center">
-                <div class="col-auto">
-                  <label for="inputPassword6" class="col-form-label"
-                    >Password</label
-                  >
-                </div>
-                <div class="col-auto">
-                  <input
-                    type="password"
-                    id="inputPassword6"
-                    class="form-control"
-                    aria-describedby="passwordHelpInline"
-                  />
-                </div>
-              </div> -->
+
+              <br />
             </div>
           </div>
         </div>
       </section>
     </main>
     <!-- script -->
-    <link rel="stylesheet" href="js/script.js" />
+    <script src="js/script.js"></script>
   </body>
 </html>
