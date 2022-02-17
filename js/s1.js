@@ -68,8 +68,6 @@ function getInputValue(inputParameter) {
             positiveInt.style.display = "block";
         }
         
-
-    
     } else if (isNaN(foodAmount) && isNaN(clothesAmount)) {
         //    if value is positive
         if (rentAmount >= 0 && incomeAmount>=0) {
@@ -160,15 +158,6 @@ function getInputValue(inputParameter) {
         }
         
     }
-
-    // const incomeAmount = getInputValue("income");
-    // const income1 = document.getElementById('income' );
-
-    // const incomeAmountText = income1.value;
-    // const incomeAmount = parseFloat(incomeAmountText);
-    // console.log(incomeAmount)
-    
-    // input.value = "";
     
     // balance
     const balance = document.getElementById("balance");
@@ -188,14 +177,23 @@ function getInputValue(inputParameter) {
 
         
         else{
-            balance.innerText = incomeAmount - parseFloat(totalCost.innerText);
-            console.log(balance.innerText);
-            const positiveInt = document.getElementById("notify-positve-int");
-            positiveInt.style.display = "none";
+            // expense can't be greater than income
+            if(parseFloat(totalCost.innerText)>incomeAmount){
+                // show error
+                totalCost.innerText=0
+                const positiveInt = document.getElementById("notify-costcan't-big");
+                positiveInt.style.display = "block";
+            }
+            else{
+                balance.innerText = incomeAmount - parseFloat(totalCost.innerText);
+                console.log(balance.innerText);
+                const positiveInt = document.getElementById("notify-positve-int");
+                positiveInt.style.display = "none";
+                const expenseExceed = document.getElementById("notify-costcan't-big");
+                expenseExceed.style.display = "none";
+            }
+            
         }
-        
-
-
     }
     // show error
     else {
