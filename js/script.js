@@ -1,24 +1,23 @@
 function getInputValue(inputParameter) {
   const input = document.getElementById(inputParameter);
-
   const inputAmountText = input.value;
   const inputAmount = parseFloat(inputAmountText);
-  console.log(inputAmount);
-
   // input.value = "";
-
   return inputAmount;
+}
+
+function getInnerText(inputParameter) {
+  const input = document.getElementById(inputParameter);
+  const inputText = input.innerText;
+  const previousInputAmount = parseFloat(inputText);
+  return input;
 }
 
 document.getElementById("calc-button").addEventListener("click", function () {
   const incomeAmount = getInputValue("income");
-
   const foodAmount = getInputValue("foodCost");
-
   const rentAmount = getInputValue("rentCost");
-
   const clothesAmount = getInputValue("clothesCost");
-
   // get current total
 
   const totalCost = document.getElementById("totalCost");
@@ -36,7 +35,6 @@ document.getElementById("calc-button").addEventListener("click", function () {
       const positiveInt = document.getElementById("notify-positve-int");
       positiveInt.style.display = "none";
     }
-
     // show error
     else {
       const positiveInt = document.getElementById("notify-positve-int");
@@ -49,7 +47,6 @@ document.getElementById("calc-button").addEventListener("click", function () {
       const positiveInt = document.getElementById("notify-positve-int");
       positiveInt.style.display = "none";
     }
-
     // show error
     else {
       const positiveInt = document.getElementById("notify-positve-int");
@@ -117,7 +114,6 @@ document.getElementById("calc-button").addEventListener("click", function () {
       const positiveInt = document.getElementById("notify-positve-int");
       positiveInt.style.display = "none";
     }
-
     // show error
     else {
       const positiveInt = document.getElementById("notify-positve-int");
@@ -137,7 +133,6 @@ document.getElementById("calc-button").addEventListener("click", function () {
         rentAmount +
         clothesAmount
       ).toFixed(2);
-      // console.log(totalCost.innerText);
       const positiveInt = document.getElementById("notify-positve-int");
       positiveInt.style.display = "none";
     }
@@ -148,13 +143,8 @@ document.getElementById("calc-button").addEventListener("click", function () {
       positiveInt.style.display = "block";
     }
   }
-
   // balance
-  const balance = document.getElementById("balance");
-  const balanceText = balance.innerText;
-  const previousTotalbalance = parseFloat(balanceText);
-  console.log(incomeAmount);
-  console.log(previousTotalbalance);
+  const balance = getInnerText("balance");
 
   // calculate balance
   if (incomeAmount >= 0 && typeof incomeAmount == "number") {
@@ -172,7 +162,6 @@ document.getElementById("calc-button").addEventListener("click", function () {
       } else {
         const Balance = incomeAmount - parseFloat(totalCost.innerText);
         balance.innerText = Balance.toFixed(2);
-        console.log(balance.innerText);
         const positiveInt = document.getElementById("notify-positve-int");
         positiveInt.style.display = "none";
         const expenseExceed = document.getElementById("notify-costcan't-big");
@@ -186,35 +175,23 @@ document.getElementById("calc-button").addEventListener("click", function () {
     positiveInt.style.display = "block";
   }
 });
-
 document.getElementById("save").addEventListener("click", function () {
   const saveAmount = getInputValue("saveInput");
-
   const incomeAmount = getInputValue("income");
-
   // get current savings
-
-  const savingAmount = document.getElementById("saving");
-  const savingAmountText = savingAmount.innerText;
-  const previousSavingAmount = parseFloat(savingAmountText);
-
+  const savingAmount = getInnerText("saving");
   if (saveAmount >= 0 && typeof saveAmount == "number") {
     const totalSavingAmount = (saveAmount * incomeAmount) / 100;
-    console.log(totalSavingAmount);
     savingAmount.innerText = totalSavingAmount;
-
     // calc remaining balance
-    const remainAmount = document.getElementById("remainBalance");
-    const remainAmountText = remainAmount.innerText;
-    const previousRemainAmount = parseFloat(remainAmountText);
-
+    const remainAmount = getInnerText("remainBalance");
+    // if saving greater than balance
     if (totalSavingAmount > balance.innerText) {
       savingAmount.innerText = 0;
       const savingBig = document.getElementById("notify-savingcan't-big");
       savingBig.style.display = "block";
     } else {
       const totalRemainBalance = balance.innerText - totalSavingAmount;
-      console.log(totalRemainBalance);
       remainAmount.innerText = totalRemainBalance;
       const positiveInt = document.getElementById("notify-positve-int");
       positiveInt.style.display = "none";
