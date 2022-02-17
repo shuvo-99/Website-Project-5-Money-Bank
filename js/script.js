@@ -66,20 +66,32 @@ document.getElementById("calc-button").addEventListener("click", function () {
 
   if (isNaN(foodAmount) && isNaN(rentAmount) && isNaN(clothesAmount)) {
     totalCost.innerText = previousTotalCost + 0 + 0 + 0;
-  } 
-  else if (isNaN(foodAmount) && isNaN(rentAmount)) {
+  } else if (isNaN(foodAmount) && isNaN(rentAmount)) {
+    //   if(isNaN(clothesAmount)){
 
-  
-      totalCost.innerText = previousTotalCost + 0 + 0 + clothesAmount;
-      const positiveInt = document.getElementById("notify-positve-int");
-      positiveInt.style.display = "none";
+    //     console.log('no')
+    //     const Integer = document.getElementById("notify-int");
+    //     Integer.style.display = "block";
 
-  // show error
-      // else {
-      //   const positiveInt = document.getElementById("notify-positve-int");
-      //   positiveInt.style.display = "block";
-      // }
-  
+    //   }
+    //   else {
+    //       console.log('yes')
+    // if value is positive
+    // if (clothesAmount >= 0) {
+    //     totalCost.innerText = previousTotalCost + 0 + 0 + clothesAmount;
+    //     const positiveInt = document.getElementById("notify-positve-int");
+    //     positiveInt.style.display = "none";
+    // }
+    totalCost.innerText = previousTotalCost + 0 + 0 + clothesAmount;
+    const positiveInt = document.getElementById("notify-positve-int");
+    positiveInt.style.display = "none";
+
+    // show error
+    // else {
+    //   const positiveInt = document.getElementById("notify-positve-int");
+    //   positiveInt.style.display = "block";
+    // }
+
     // totalCost.innerText = previousTotalCost + 0 + 0 + clothesAmount;
   } else if (isNaN(foodAmount) && isNaN(clothesAmount)) {
     // if value is positive
@@ -110,8 +122,7 @@ document.getElementById("calc-button").addEventListener("click", function () {
     }
     // totalCost.innerText = previousTotalCost + foodAmount + 0 + 0;
   } else if (isNaN(foodAmount)) {
-
-    // if value is positive  
+    // if value is positive
     if (rentAmount >= 0 && clothesAmount >= 0) {
       totalCost.innerText = previousTotalCost + 0 + rentAmount + clothesAmount;
       const positiveInt = document.getElementById("notify-positve-int");
@@ -125,8 +136,7 @@ document.getElementById("calc-button").addEventListener("click", function () {
     }
     // totalCost.innerText = previousTotalCost + 0 + rentAmount + clothesAmount;
   } else if (isNaN(rentAmount)) {
-
-    // if value is positive  
+    // if value is positive
     if (foodAmount >= 0 && clothesAmount >= 0) {
       totalCost.innerText = previousTotalCost + foodAmount + 0 + clothesAmount;
       const positiveInt = document.getElementById("notify-positve-int");
@@ -141,8 +151,7 @@ document.getElementById("calc-button").addEventListener("click", function () {
 
     // totalCost.innerText = previousTotalCost + foodAmount + 0 + clothesAmount;
   } else if (isNaN(clothesAmount)) {
-
-    // if value is positive 
+    // if value is positive
     if (foodAmount >= 0 && rentAmount >= 0) {
       totalCost.innerText = previousTotalCost + foodAmount + rentAmount + 0;
       const positiveInt = document.getElementById("notify-positve-int");
@@ -156,8 +165,7 @@ document.getElementById("calc-button").addEventListener("click", function () {
     }
     // totalCost.innerText = previousTotalCost + foodAmount + rentAmount + 0;
   } else {
-
-    // if value is positive  
+    // if value is positive
     if (foodAmount >= 0 && rentAmount >= 0 && clothesAmount >= 0) {
       totalCost.innerText =
         previousTotalCost + foodAmount + rentAmount + clothesAmount;
@@ -167,12 +175,10 @@ document.getElementById("calc-button").addEventListener("click", function () {
     }
 
     // show error
-
     else {
       const positiveInt = document.getElementById("notify-positve-int");
       positiveInt.style.display = "block";
     }
-
 
     // totalCost.innerText =
     //   previousTotalCost + foodAmount + rentAmount + clothesAmount;
@@ -185,6 +191,4 @@ document.getElementById("calc-button").addEventListener("click", function () {
 
   // rentInput.value = '';
   // clothesInput.value = '';
-});
-
 });
