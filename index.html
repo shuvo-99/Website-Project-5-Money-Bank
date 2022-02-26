@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Save & Expense</title>
 
     <!-- bootstrap -->
     <link
@@ -32,54 +32,11 @@
               alt=""
             />
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 col-background">
             <div class="text-center">
-              <!-- <div>
-                <p>Income</p>
-              </div>
-              <div>
-                <p>
-                  Income: <span><input type="text " /></span>
-                </p>
-              </div>
-              <div>
-                <p>Expense</p>
-              </div>
-              <div>
-                <p>
-                  Food: <span><input type="text " /></span>
-                </p>
-              </div>
-              <div>
-                <p>
-                  Rent: <span><input type="text " /></span>
-                </p>
-              </div>
-              <div>
-                <p>
-                  Clothes: <span><input type="text " /></span>
-                </p>
-              </div>
-              <div>
-                <button type="button" class="btn btn-primary px-5 mb-2">
-                  Calculate
-                </button>
-              </div>
-              
-              <div>
-                <p>Total Expense: 5500</p>
-              </div>
-              <div>
-                <p>Balance: 4500</p>
-              </div>
-              <div class="notify-section">
-                <p class="notify">❌ Please input a number as input</p>
-                <p class="notify">❌ Please input a positve number as input</p>
-                
-              </div> -->
               <!-- Income -->
               <div>
-                <p>Income</p>
+                <p class="fw-bold fs-5">Income</p>
               </div>
               <!-- Income box -->
               <div
@@ -89,12 +46,17 @@
                   <label for="income" class="col-form-label">Income:</label>
                 </div>
                 <div class="col-auto">
-                  <input type="text" id="income" class="form-control" placeholder="*Required" />
+                  <input
+                    type="text"
+                    id="income"
+                    class="form-control"
+                    placeholder="*Required"
+                  />
                 </div>
               </div>
               <!-- Expense -->
               <div>
-                <p>Expense</p>
+                <p class="fw-bold fs-5">Expense</p>
               </div>
               <!-- food -->
               <div
@@ -143,18 +105,22 @@
 
                 <!-- Reset -->
 
-                <a href="" class="btn btn-warning">Reset</a>
+                <a href="" class="btn btn-warning mx-2">Reset</a>
               </div>
               <!-- total expense -->
               <div>
-                <p>Total Expense: <span id="totalCost">00</span></p>
+                <p class="fw-bold fs-5">
+                  Total Expense: <span id="totalCost">00</span>
+                </p>
               </div>
               <!-- balance -->
               <div>
-                <p>Balance: <span id="balance">00</span></p>
+                <p class="fw-bold fs-5">
+                  Balance: <span id="balance">00</span>
+                </p>
               </div>
 
-               <!--Save  -->
+              <!--Save  -->
 
               <div
                 class="row g-3 mb-3 align-items-center justify-content-center"
@@ -166,20 +132,27 @@
                   <input type="text" class="form-control" id="saveInput" />
                 </div>
                 %
-                <button type="button" class="btn btn-width btn-info mx-2" id="save">Save</button>
-                 
+                <button
+                  type="button"
+                  class="btn btn-width btn-info mx-2"
+                  id="save"
+                >
+                  Save
+                </button>
               </div>
 
               <!-- Saving Amount -->
               <div>
-                <p>Saving Amount: <span id="saving">00</span></p>
+                <p class="fw-bold fs-5">
+                  Saving Amount: <span id="saving">00</span>
+                </p>
               </div>
               <!-- remaining balance -->
               <div>
-                <p>Remaining Balance: <span id="remainBalance">00</span></p>
+                <p class="fw-bold fs-5">
+                  Remaining Balance: <span id="remainBalance">00</span>
+                </p>
               </div>
-
-
 
               <!-- eorror -->
               <div class="notify-section">
@@ -207,6 +180,6 @@
       </section>
     </main>
     <!-- script -->
-    <script src="js/s1.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
