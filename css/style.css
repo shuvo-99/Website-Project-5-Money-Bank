@@ -17,6 +17,10 @@
   margin: 0 auto;
 }
 
-.btn-width{
+.btn-width {
   width: 10%;
+}
+
+.col-background {
+  background-color: rgb(241, 224, 202);
 }
